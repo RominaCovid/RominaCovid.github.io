@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8"/>
+
+      <title>Encriptador</title>
+      <link rel="stylesheet" type="text/css" href="reset.css">
+      <link rel="stylesheet" type="text/css" href="estilos.css">
+     
+  </head>
+  <body >
+    <header>
+      <img id="logo" src="IMAGENES\Logo.png">
+
+    </header>
+
+    <main> 
+
+      <div>
+        <textarea class="texto-puro" id="original"cols="50"></textarea>                    
+        <textarea class="texto-encriptado" id="encriptado"  cols="50"></textarea> 
+         
+      </div>
+        <p>&#9888;Solamente letras minúsculas y sin acento</p>
+
+      <div >
+        <input class="boton-encriptar"   type="button"  value="Encriptar">      
+        <input class="boton-desencriptar"  type="button"  value="desencriptador">
+        <input class="boton-copiar" type="button" name="copia" value="Copiar">
+
+      </div>   
+    </main>
+    <img src="IMAGENES\candados.jpg" class="imagen" alt="Imagen de candados" />
+     <script>
+    	function sinAcentos(str){
+    		var nuevoTexto="";
+           for(var i=0; i <str.length;i++){
+              if(str.charAt(i) == "é"){
+                nuevoTexto+=str[i].replace("é","e"); 
+                 
+              }else if(str.charAt(i) == "í"){
+                      nuevoTexto+=str[i].replace("í","i"); 
+                      }else if(str.charAt(i) == "á"){
+                              nuevoTexto+=str[i].replace("á","a"); 
+                            }else if(str.charAt(i) == "ó"){
+                                       nuevoTexto+=str[i].replace("ó","o"); 
+                                    }else if(str.charAt(i) == "ú"){
+                                            nuevoTexto+=str[i].replace("ú","u"); 
+                                          }else {
+                                            nuevoTexto+=str[i];}  
+        }
+
+    		return nuevoTexto;
+    	}
+    </script>
+
+     <script>  
+          var foco = document.querySelector(".texto-puro");
+          foco.focus();       
+          var botonEncriptar = document.querySelector(".boton-encriptar"); 
+          function textoEncriptado(){  
+            var texto=document.getElementById("original").value;
+            texto=texto.toLowerCase();
+            texto=sinAcentos(texto);
+            var nuevoTexto=" "; 
+            for(var i=0; i <texto.length;i++){
+              if(texto.charAt(i) == "e"){
+                nuevoTexto+=texto[i].replace("e","enter"); 
+                 
+              }else if(texto.charAt(i) == "i"){
+                      nuevoTexto+=texto[i].replace("i","imes"); 
+                      }else if(texto.charAt(i) == "a"){
+                              nuevoTexto+=texto[i].replace("a","ai"); 
+                            }else if(texto.charAt(i) == "o"){
+                                       nuevoTexto+=texto[i].replace("o","ober"); 
+                                    }else if(texto.charAt(i) == "u"){
+                                            nuevoTexto+=texto[i].replace("u","ufat"); 
+                                          }else {
+                                            nuevoTexto+=texto[i];}             
+           
+              
+          } 
+          document.getElementById("original").value=nuevoTexto;
+          
+          document.getElementById("encriptado").value=nuevoTexto;               
+       
+       }                    
+       botonEncriptar.onclick = textoEncriptado;
+    </script>   
+
+    <script>
+      var botonDesencriptar = document.querySelector(".boton-desencriptar");
+      function textoDesencriptado(){ 
+          var texto = document.getElementById("original").value;           
+                  
+          if(texto.search("enter") != -1){
+            texto=texto.replace(/enter/g,"e");
+               
+          }
+          if (texto.search("imes") != -1){
+              texto=texto.replace(/imes/g,"i");
+                  
+          }
+          if (texto.search("ai") != -1){
+             texto=texto.replace(/ai/g,"a");
+               
+          } 
+          if (texto.search("ober") != -1){
+             texto=texto.replace(/ober/g,"o");
+                
+          } 
+          if(texto.search("ufat") != -1){
+            texto=texto.replace(/ufat/g,"u");
+              
+          }                                        
+         document.getElementById("original").value = texto;
+         
+        
+
+       } 
+                              
+       botonDesencriptar.onclick = textoDesencriptado; 
+    </script>
+    <script >
+      var botonCopiar = document.querySelector(".boton-copiar");
+      var textoCopiado =document.querySelector(".texto-encriptado");
+      botonCopiar.addEventListener("click",function() {
+        textoCopiado.focus();
+        document.execCommand("selectAll");
+        document.execCommand("copy");
+      })
+    </script>
+
+
+	
+    <footer class="pie">
+    	    <p>&#169 Retamoso Romina - Argentina</p>
+    </footer>    
+   
+   
+  </body>
+</html>
