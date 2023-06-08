@@ -2,17 +2,14 @@
 <html>
   <head>
       <meta charset="utf-8"/>
-
       <title>Encriptador</title>
       <link rel="stylesheet" type="text/css" href="reset.css">
-      <link rel="stylesheet" type="text/css" href="estilos.css">
-     
+      <link rel="stylesheet" type="text/css" href="estilos.css">     
   </head>
   <body >
     <header>
       <img id="logo" src="IMAGENES\Logo.png">
       <p>&#35;challengeonecodificador5</p>
-
     </header>
 
     <main> 
@@ -20,18 +17,18 @@
       <div>
         <textarea class="texto-puro" id="original"cols="50"></textarea>                    
         <textarea class="texto-encriptado" id="encriptado"  cols="50"></textarea> 
-         
       </div>
         <p>&#9888;Solamente letras minúsculas y sin acento</p>
 
-      <div >
+      <div>
         <input class="boton-encriptar"   type="button"  value="Encriptar">      
         <input class="boton-desencriptar"  type="button"  value="desencriptador">
         <input class="boton-copiar" type="button" name="copia" value="Copiar">
 
-      </div>   
+      </div>  
+      <img src="IMAGENES\candados.jpg" class="imagen" alt="Imagen de candados" /> 
     </main>
-    <img src="IMAGENES\candados.jpg" class="imagen" alt="Imagen de candados" />
+   
      <script>
     	function sinAcentos(str){
     		var nuevoTexto="";

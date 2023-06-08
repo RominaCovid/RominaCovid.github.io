@@ -1,7 +1,9 @@
+
 body{
-	width: 940px;
+	width: 640px;
+    height: 1040px;
 	margin:20px 50px;
-	background: linear-gradient(green 30%,white 70%);
+	background: linear-gradient(green 20%,white 80%);
 
 }
 
@@ -11,11 +13,12 @@ body{
 	align-items: flex-start;
 	padding: 0px;
 	gap: 40px;
-	position: absolute;
+	position: relative;
 	width: 120px;
 	height: 48px;
-	left:20%;
+	left:50%;
 	top: 40px;
+	bottom: 0px;
 
 }
 
@@ -23,9 +26,9 @@ main{
 	display: inline;
 	position: relative;
 	top: 95px;
-	right:20% ;
+	right:346px ;
 	bottom: 18%;
-	left:32%;
+	left: 346px;;
 
 	
 }
@@ -54,10 +57,11 @@ p{
 	border-radius: 15px;
 }
 .imagen{
-	float: right;
-	width: 600px;
+	
+	width: 650px;
 	height: 300px;
-
+	margin-top: -43px;
+    
 	
 }
 .boton-encriptar{
@@ -90,8 +94,15 @@ p{
 
 .pie{
 	position: relative;
-	top:260px;
-	left: 520px;
+	top:160px;
+	left: 560px;
 	right: 470px;
 }
 
+@media screen and (max-whith:600px) {
+	body{
+		
+		background: blue;
+	}
+	
+}
