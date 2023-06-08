@@ -99,10 +99,8 @@ p{
 	right: 470px;
 }
 
-@media screen and (max-whith:600px) {
-	body{
-		
-		background: blue;
+@media all and (min-width: 600px){
+	body{		
+		height: 1674px;
 	}
-	
 }
